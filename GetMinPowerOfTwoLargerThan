@@ -1,0 +1,22 @@
+internal class Program
+{
+    private static int GetMinPowerOfTwoLargerThan(int n)
+    {
+        int x = n;
+        double k;
+        do
+        {
+            ++x;
+            k = Math.Log2(x);
+        } while (k - Math.Floor(k) != 0);
+        return x;
+    }
+    public static void Main()
+    {
+        Console.WriteLine(GetMinPowerOfTwoLargerThan(2));       // => 4
+        Console.WriteLine(GetMinPowerOfTwoLargerThan(15));      // => 16
+        Console.WriteLine(GetMinPowerOfTwoLargerThan(-2));      // => 1
+        Console.WriteLine(GetMinPowerOfTwoLargerThan(-100));    // => 1
+        Console.WriteLine(GetMinPowerOfTwoLargerThan(100));     // => 128
+    }
+}
